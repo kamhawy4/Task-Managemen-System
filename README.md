@@ -13,15 +13,18 @@ This is a minimal native PHP task management application implementing the techni
 ## Setup (local)
 1. Copy the project to your web server root or point your virtual host to `public/`.
 2. Create a MySQL database and user. Default config is in `config/config.php`.
-3. Run SQL script `database/schema.sql`. Replace the password hash placeholder:
-   - Generate a password hash for seed user (Alice). Example using PHP CLI:
-     ```php
-     <?php echo password_hash('password123', PASSWORD_DEFAULT); ?>
-     ```
-   - Replace `REPLACE_WITH_HASH` in `database/schema.sql` with the produced hash, then execute the SQL.
+3. Run SQL script `database/schema.sql` to create tables and insert a default user.
 4. Update `config/config.php` with your DB credentials.
 5. Ensure `storage/logs` is writable by the web server.
-6. Access the app (e.g. http://localhost/) and register or login with seeded user.
+6. Access the app (e.g. http://localhost/) and login with the default seeded user.
+
+## Default Credentials
+A default user is already created in the database:
+
+- **Email:** `alice@example.com`  
+- **Password:** `123456`
+
+You can also register new users from the registration page.
 
 ## Notes / Security
 - CSRF tokens are checked on POST routes.
@@ -36,4 +39,3 @@ This is a minimal native PHP task management application implementing the techni
 - `database/schema.sql` - schema + seed
 - `config/config.php` - configuration
 
-# -Task-Managemen-System

@@ -23,7 +23,8 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 -- seed
 INSERT INTO users (name,email,password) VALUES
-('Alice','alice@example.com','REPLACE_WITH_HASH');
+    ('Alice','alice@example.com','$2y$10$N7wXt0mRb8WJm4h2fYyzQeX2a0jU9ZpQ9lUd7b0bwTfPYgU4ikj3a');
+
 
 INSERT INTO tasks (user_id,title,description,status,due_date) VALUES
 (1,'Welcome task','This is your first task','pending',NULL);
